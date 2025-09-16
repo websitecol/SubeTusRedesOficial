@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sube Tus Redes - Precios</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <img src="logo.png" alt="Sube Tus Redes" class="logo">
+      </header>
+
+      <nav class="tabs" role="tablist" aria-label="Redes sociales">
+        <button class="tab is-active" data-network="tiktok" role="tab" aria-selected="true">TikTok</button>
+        <button class="tab" data-network="instagram" role="tab" aria-selected="false">Instagram</button>
+        <button class="tab" data-network="facebook" role="tab" aria-selected="false">Facebook</button>
+        <button class="tab" data-network="youtube" role="tab" aria-selected="false">YouTube</button>
+      </nav>
+
+      <div id="captureArea">
+        <div class="title-row">
+          <div class="title" id="currentNetwork">TikTok</div>
+          <button id="btnShot" class="icon-btn" title="Copiar pantallazo" aria-label="Copiar pantallazo" data-html2canvas-ignore>
+            <span class="camera" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <main id="priceColumns" class="columns">
+          <!-- Columnas se inyectan desde JS -->
+        </main>
+      </div>
+
+      <footer class="footer">
+        <small>Hecho con ❤️ en HTML, CSS y JS</small>
+      </footer>
+    </div>
+
+    <!-- html2canvas para pantallazo -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
