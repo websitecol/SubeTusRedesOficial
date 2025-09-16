@@ -175,6 +175,8 @@ renderNetwork('tiktok');
 // Pantallazo
 document.getElementById('btnShot').addEventListener('click', async () => {
   const target = document.getElementById('captureArea');
+  // Aplica temporalmente el mismo gradiente de fondo para que html2canvas lo capture
+  target.classList.add('capture-bg');
   const canvas = await html2canvas(target, {backgroundColor: null, scale: 2});
 
   const canUseClipboardImage = !!(window.ClipboardItem && navigator.clipboard && location.protocol.startsWith('http'));
@@ -184,6 +186,7 @@ document.getElementById('btnShot').addEventListener('click', async () => {
       const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
       await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
       toast('Imagen copiada al portapapeles');
+      target.classList.remove('capture-bg');
       return;
     } catch (err) {
       // continúa al respaldo de descarga
@@ -222,6 +225,7 @@ document.getElementById('btnShot').addEventListener('click', async () => {
   link.click();
   link.remove();
   toast('No se pudo copiar automáticamente. Abrí y descargué la imagen.');
+  target.classList.remove('capture-bg');
 });
 
 function toast(message){
