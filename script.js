@@ -103,11 +103,11 @@ const DATA = {
       {
         name: 'Me gusta',
         items: [
-          { label: '1000', price: '$5.000' },
-          { label: '2000', price: '$10.000' },
-          { label: '3000', price: '$15.000' },
-          { label: '5000', price: '$25.000' },
-          { label: '10.000', price: '$45.000' }
+          { label: '1000', price: '$10.000' },
+          { label: '2000', price: '$15.000' },
+          { label: '3000', price: '$25.000' },
+          { label: '5000', price: '$35.000' },
+          { label: '10.000', price: '$50.000' }
         ]
       },
       {
@@ -243,5 +243,6 @@ function toast(message){
   document.body.appendChild(el);
   setTimeout(()=>{ el.remove(); }, 1800);
 }
+
 
 
